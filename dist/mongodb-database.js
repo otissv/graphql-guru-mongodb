@@ -82,7 +82,7 @@ var MongoDBQuery = exports.MongoDBQuery = function () {
       var TABLE = this.table;
       var obj = args || query;
 
-      if (obj == null) return null;
+      if (obj == null || obj._id == null) return null;
 
       // check to see if document is in cached
       var cacheKey = '' + this.table + obj._id;

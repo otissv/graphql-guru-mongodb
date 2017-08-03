@@ -44,7 +44,7 @@ export class MongoDBQuery {
     const TABLE = this.table;
     const obj = args || query;
 
-    if (obj == null) return null;
+    if (obj == null || obj._id == null) return null;
 
     // check to see if document is in cached
     const cacheKey = `${this.table}${obj._id}`;
